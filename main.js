@@ -1,47 +1,53 @@
-const path = require('path'), url = require('url')
-const ep = require('./src/ElectronPlus')
-const { BrowserWindow, app } = require('electron')
+const path = require('path'), url = require('url');
+const ep = require('./src/ElectronPlus');
+const {BrowserWindow, app} = require('electron');
 
-let main
+let main;
 
 // Your Main BrowserWindow
 function createMainWindow() {
-  main = new BrowserWindow({ width: 1080, height: 720, show: false });
-  main.loadURL(url.format({
-    pathname: ep.view('main'),
-    protocol: 'file:',
-    slashes: true
-  }));
-  main.once('ready-to-show', () => {
-    main.show()
-  })
-  main.on('closed', () => {
-    app.quit()
-  });
+    main = new BrowserWindow({width: 1080, height: 720, show: false});
+    main.loadURL(url.format({
+        pathname: ep.view('main'),
+        protocol: 'file:',
+        slashes: true
+    }));
+    main.once('ready-to-show', () => {
+        main.show()
+    });
+    main.on('closed', () => {
+        app.quit()
+    });
 }
 
+// Create the main window when ready
 app.on('ready', createMainWindow)
 
+// Some Support
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
-      app.quit()
+        app.quit()
     }
-})
+});
 
+// Some more support
 app.on('activate', () => {
     if (main === null) {
-      createMainWindow()
+        createMainWindow()
     }
-})
+});
 
-app.on('web-contents-created', (event, contents) => {
-  contents.on('will-attach-webview', (event, webPreferences, params) => {
-    delete webPreferences.preload;
-    delete webPreferences.preloadURL;
-    webPreferences.nodeIntegration = false;
-    if (!params.src.startsWith('file://')) {
-        event.preventDefault()
-    }
-  })
-  contents.executeJavaScript("window.eval = global.eval = function() {throw new Error('eval disabled');}")
-})
+// Cheeky Fixes
+app.on('web-contents-created', (event, window) => {
+    window.setMenu(null);
+    window.on('will-attach-webview', (event, webPreferences, params) => {
+        delete webPreferences.preload;
+        delete webPreferences.preloadURL;
+        webPreferences.nodeIntegration = false;
+        if (!params.src.startsWith('file://')) {
+            event.preventDefault();
+        }
+    });
+    // Remove Eval
+    window.executeJavaScript("window.eval = global.eval = function() {throw new Error('eval is not supported in this application');}");
+});

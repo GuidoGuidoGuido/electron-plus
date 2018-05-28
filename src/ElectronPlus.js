@@ -1,12 +1,11 @@
 const path = require('path'), url = require('url')
-const { app, BrowserWindow, ipcMain, remote } = require('electron')
+const { ipcMain, remote, Menu } = require('electron')
 
 let ipcObj;
 
 class ElectronPlus {
 
   constructor() {
-    
   }
 
   on(channel, callable) {
