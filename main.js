@@ -1,8 +1,18 @@
-const path = require('path'), url = require('url');
+const url = require('url');
 const ep = require('./src/ElectronPlus');
 const {BrowserWindow, app} = require('electron');
 
 let main;
+
+// Set ElectronPLus ( Application Details )
+ep.setMenu({
+    0: "Item 1",
+    1: "Item 2",
+    2: [
+        { 0: "Test Item" }
+    ]
+
+});
 
 // Your Main BrowserWindow
 function createMainWindow() {
@@ -39,7 +49,7 @@ app.on('activate', () => {
 
 // Cheeky Fixes
 app.on('web-contents-created', (event, window) => {
-    window.setMenu(null);
+    // FIXME: window.setMenu(null);
     window.on('will-attach-webview', (event, webPreferences, params) => {
         delete webPreferences.preload;
         delete webPreferences.preloadURL;

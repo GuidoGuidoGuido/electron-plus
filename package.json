@@ -7,7 +7,9 @@
     "electron": "^2.0.2",
     "xel": "0.0.137"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint-config-google": "^0.9.1"
+  },
   "scripts": {
     "start": "electron ."
   },

@@ -1,11 +1,16 @@
 const path = require('path'), url = require('url')
 const { ipcMain, remote, Menu } = require('electron')
 
-let ipcObj;
-
+let app = {};
+let ipcObj = null;
 class ElectronPlus {
 
   constructor() {
+      
+  }
+
+  setMenu(menu) {
+
   }
 
   on(channel, callable) {
