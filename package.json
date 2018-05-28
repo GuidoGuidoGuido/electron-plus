@@ -1,0 +1,28 @@
+{
+  "name": "electron-plus",
+  "version": "1.0.0",
+  "description": "A new electron boilerplate for rapid and big development",
+  "main": "main.js",
+  "dependencies": {
+    "electron": "^2.0.2",
+    "xel": "0.0.137"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "boilerplate",
+    "electron",
+    "electron",
+    "boilerplate",
+    "electron",
+    "template",
+    "preset",
+    "electron",
+    "preset",
+    "template"
+  ],
+  "author": "Joey de Vries",
+  "license": "MIT"
+}
