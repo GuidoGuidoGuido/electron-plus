@@ -1,44 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <title>Electron Plus Demo</title>
-    <link rel="stylesheet" href="../node_modules/xel/themes/vanilla.css">
-</head>
-<body>
-    <x-menu>
-        <x-menuitem>
-            <x-icon name='undo'></x-icon>
-            <x-label>Undo</x-label>
-            <x-shortcut value='Control+Z'></x-shortcut>
-        </x-menuitem>
-        <x-menuitem>
-            <x-icon name='redo'></x-icon>
-            <x-label>Redo</x-label>
-            <x-shortcut value='Control+Shift+Z'></x-shortcut>
-        </x-menuitem>
-        <hr>
-        <x-menuitem>
-            <x-icon name='content-cut'></x-icon>
-            <x-label>Cut</x-label>
-            <x-shortcut value='Control+X'></x-shortcut>
-            </x-menuitem>
-        <x-menuitem>
-            <x-icon name='content-copy'></x-icon>
-            <x-label>Copy</x-label>
-            <x-shortcut value='Control+C'></x-shortcut>
-        </x-menuitem>
-        <x-menuitem>
-            <x-icon name='content-paste'></x-icon>
-            <x-label>Paste</x-label>
-            <x-shortcut value='Control+V'></x-shortcut>
-        </x-menuitem>
-        <hr>
-        <x-menuitem>
-            <x-icon></x-icon>
-            <x-label>Refresh</x-label>
-            </x-menuitem>
-    </x-menu>
-    <h1>Hey</h1>
-</body>
+	<head>
+		<meta charset="utf-8">
+		<title>Electron Plus Demo</title>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.min.css">
+	</head>
+	<body>
+		<nav class="nav-extended">
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo">ElectronPlus</a>
+			</div>
+			<div class="nav-content">
+				<ul class="tabs tabs-transparent">
+					<li class="tab"><a href="#demo">Demo Application</a></li>
+				</ul>
+			</div>
+        </nav>
+        
+		<main ep-tab="demo">
+            <h1>Test</h1>
+        </main>
+		<script src="../src/ElectronPlus.web.js"></script>
+		<script src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>    
+	</body>
 </html>

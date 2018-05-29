@@ -10,7 +10,7 @@ class ElectronPlus {
   }
 
   setMenu(menu) {
-
+    
   }
 
   on(channel, callable) {

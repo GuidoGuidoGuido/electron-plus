@@ -5,6 +5,9 @@
   "main": "main.js",
   "dependencies": {
     "electron": "^2.0.2",
+    "eslint": "^4.19.1",
+    "jquery": "^3.3.1",
+    "materialize-css": "^1.0.0-rc.1",
     "xel": "0.0.137"
   },
   "devDependencies": {
