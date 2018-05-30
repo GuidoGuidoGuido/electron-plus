@@ -1,19 +1,11 @@
 {
   "name": "electron-plus",
-  "version": "1.0.0",
   "description": "A new electron boilerplate for rapid and big development",
   "main": "main.js",
-  "dependencies": {
-    "electron": "^2.0.2",
-    "eslint": "^4.19.1",
-    "jquery": "^3.3.1"
-  },
-  "devDependencies": {
-    "eslint-config-google": "^0.9.1"
-  },
-  "scripts": {
-    "start": "electron ."
-  },
+  "authors": [
+    "Joey de Vries"
+  ],
+  "license": "MIT",
   "keywords": [
     "boilerplate",
     "electron",
@@ -26,6 +18,15 @@
     "preset",
     "template"
   ],
-  "author": "Joey de Vries",
-  "license": "MIT"
+  "homepage": "https://github.com/xJoeyv/electron-plus",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "admin-lte": "^2.4.3"
+  }
 }
