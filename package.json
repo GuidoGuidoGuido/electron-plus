@@ -4,11 +4,10 @@
   "description": "A new electron boilerplate for rapid and big development",
   "main": "main.js",
   "dependencies": {
+    "admin-lte": "^2.4.3",
     "electron": "^2.0.2",
     "eslint": "^4.19.1",
-    "jquery": "^3.3.1",
-    "materialize-css": "^1.0.0-rc.1",
-    "xel": "0.0.137"
+    "jquery": "^3.3.1"
   },
   "devDependencies": {
     "eslint-config-google": "^0.9.1"
