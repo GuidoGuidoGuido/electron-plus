@@ -14,7 +14,11 @@ function createMainWindow() {
         protocol: 'file:',
         slashes: true
     }));
+<<<<<<< HEAD
     main.webContents.openDevTools();
+=======
+    main.webContents.openDevTools()
+>>>>>>> ab2f2d8b0ee606e3f2c1cd2b8ba9b7ce52bbb2b9
     main.once('ready-to-show', () => {
         main.show()
     });
