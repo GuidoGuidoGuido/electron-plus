@@ -1,6 +1,6 @@
 {
   "name": "electron-plus",
-  "description": "A new electron boilerplate for rapid and big development",
+  "description": "A new electron helper for rapid and big development",
   "main": "main.js",
   "authors": [
     "Joey de Vries"

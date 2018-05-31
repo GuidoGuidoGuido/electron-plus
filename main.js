@@ -14,6 +14,7 @@ function createMainWindow() {
         protocol: 'file:',
         slashes: true
     }));
+    main.webContents.openDevTools();
     main.once('ready-to-show', () => {
         main.show()
     });
@@ -47,7 +48,6 @@ app.on('web-contents-created', (event, contents) => {
     contents.on('will-attach-webview', (event, webPreferences, params) => {
         delete webPreferences.preload;
         delete webPreferences.preloadURL;
-        webPreferences.nodeIntegration = false;
         if (!params.src.startsWith('file://')) {
             event.preventDefault();
         }
