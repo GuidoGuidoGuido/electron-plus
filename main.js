@@ -14,6 +14,7 @@ function createMainWindow() {
         protocol: 'file:',
         slashes: true
     }));
+    main.webContents.openDevTools()
     main.once('ready-to-show', () => {
         main.show()
     });
