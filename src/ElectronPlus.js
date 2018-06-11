@@ -9,10 +9,6 @@ class ElectronPlus {
       
   }
 
-  setMenu(menu) {
-    
-  }
-
   on(channel, callable) {
       if(callable instanceof Function) {
           ipcMain.on(channel, (event, arg) => {
