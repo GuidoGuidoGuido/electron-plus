@@ -42,8 +42,9 @@ app.on('activate', () => {
 
 // Cheeky Fixes
 app.on('browser-window-created', (event,window) => {
-    window.setMenu(null);
+    // window.setMenu(null);
 });
+
 app.on('web-contents-created', (event, contents) => {
     contents.on('will-attach-webview', (event, webPreferences, params) => {
         delete webPreferences.preload;
@@ -54,4 +55,10 @@ app.on('web-contents-created', (event, contents) => {
     });
     // Remove Eval
     contents.executeJavaScript("window.eval = global.eval = function() {throw new Error('eval is not supported in this application');}");
+});
+
+// Some IPC
+ep.on('logger', (request) => {
+    let arg = request.argument;
+    request.response({ level: arg.level, message: arg.message, date:new Date() });
 });
