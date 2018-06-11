@@ -1,39 +1,32 @@
 const path = require('path'), url = require('url')
-const { app, BrowserWindow, ipcMain, remote } = require('electron')
+const { ipcMain, remote, Menu } = require('electron')
 
-let ipcObj;
+let app = {
+    ResponseChannel: ":response"
+};
+let request = null;
 
 class ElectronPlus {
-
-  constructor() {
-    
-  }
-
-  on(channel, callable) {
-      if(callable instanceof Function) {
+    on(channel, callable) {
+        if(callable instanceof Function) {
           ipcMain.on(channel, (event, arg) => {
-              channel = channel + ResponseChannel;
-              ipcObj = { c:channel, e:event, a:arg };
-              callable()
+              request = { channel:channel + app.ResponseChannel, event:event, argument:arg,
+                response: function(data) {
+                    request.event.sender.send(request.channel, data);
+                }
+            };
+            callable(request);
           });
-      }
-  };
+        }
+    };
 
-  res(data) {
-      ipcObj.e.sender.send(ipcObj.c, data)
-  };
+    send(win, channel, data) {
+        win.webContents.send(channel, data)
+    };
 
-  resClear() {
-      ipcObj = null;
-  };
-
-  send(win, channel, data) {
-      win.webContents.send(channel, data)
-  };
-
-  view(view) {
-    return path.join(__dirname, '../views/'+view+'.html');
-  }
+    view(view) {
+        return path.join(__dirname, '../views/'+view+'.html');
+    }
 }
 const ep = new ElectronPlus;
 

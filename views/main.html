@@ -1,11 +1,90 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="../node_modules/xel/themes/vanilla.css">
-  </head>
-  <body>
-    <h1>Helo World</h1>
-  </body>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ElectronPlus Demo | Boilerplate</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="../bower_components/admin-lte/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="../bower_components/admin-lte/dist/css/skins/skin-black.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-black layout-top-nav">
+<div class="wrapper">
+
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand"><b>Electron</b>Plus</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="content-wrapper">
+    <div class="container">
+      
+      <section class="content-header">
+        <h1>
+          ElectronPlus Demo
+        </h1>
+      </section>
+
+      <section class="content">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="box box-default">
+              <div class="box-header with-border">
+                <h3 class="box-title"><i class="fa fa-file"></i> Logs</h3>
+              </div>
+              <div class="box-footer no-padding">
+                <ul class="nav nav-pills nav-stacked" id="log">
+                  <li><a href="#">Application Started <span class="pull-right text-blue">INFO</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="box box-info">
+              <div class="box-header with-border">
+                <h3 class="box-title">Create Log</h3>
+              </div>
+              <div class="box-body">
+                <form action="" id="createLog">
+                  <div class="form-group">
+                    <label for="message">Message</label>
+                    <input type="text" class="form-control" name="message" id="message">
+                  </div>
+                  <div class="form-group">
+                    <label for="level">Level</label>
+                    <select class="form-control" name="level">
+                      <option value="INFO">INFO</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-sm btn-block">Make Log</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="../bower_components/fastclick/lib/fastclick.js"></script>
+<script src="../bower_components/admin-lte/dist/js/adminlte.min.js"></script>
+<script>if (window.module) module = window.module;</script>
+<script src="../src/ElectronPlus.web.js"></script>
+</body>
 </html>

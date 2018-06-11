@@ -1,0 +1,32 @@
+{
+  "name": "electron-plus",
+  "description": "A new electron helper for rapid and big development",
+  "main": "main.js",
+  "authors": [
+    "Joey de Vries"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "boilerplate",
+    "electron",
+    "electron",
+    "boilerplate",
+    "electron",
+    "template",
+    "preset",
+    "electron",
+    "preset",
+    "template"
+  ],
+  "homepage": "https://github.com/xJoeyv/electron-plus",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "admin-lte": "^2.4.3"
+  }
+}
