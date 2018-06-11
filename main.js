@@ -1,10 +1,7 @@
 const url = require('url');
 const ep = require('./src/ElectronPlus');
 const {BrowserWindow, app} = require('electron');
-
 let main;
-
-// Set ElectronPLus ( Application Details )
 
 // Your Main BrowserWindow
 function createMainWindow() {
