@@ -1,7 +1,7 @@
-const {ipcRenderer} = require('electron');
-let LogConfig = {
+const { epw } = require(require("path").resolve('src/ElectronPlus'));
+epw.addConfig('LogConfig', {
     INFO: 'blue'
-};
+});
 
 $("#createLog").submit(e => {
     e.preventDefault();
@@ -11,12 +11,14 @@ $("#createLog").submit(e => {
     if(msg === undefined || lvl === undefined | msg === "" || lvl === "") {
         alert("Please fill out your logger information");
     } else {
-        ipcRenderer.send('logger', { form:form, message:msg, level:lvl });
+        epw.send('logger', { form:form, message:msg, level:lvl });
     }
 });
 
-ipcRenderer.on('logger:response', (event, arg) => {
-    let color = LogConfig[arg.level];
+epw.on('logger', (response) => {
+    let arg = response.argument;
+    let color = epw.getConfig('LogConfig')[arg.level];
     let tpl = `<li><a href="#">${arg.message}<span class="pull-right text-${color}">${arg.level}</span></a></li>`;
     $("#log").append(tpl);
+    response.request({key:'value'}, 'test');
 });

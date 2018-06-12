@@ -1,5 +1,5 @@
 const url = require('url');
-const ep = require('./src/ElectronPlus');
+const { ep } = require('./src/ElectronPlus');
 const {BrowserWindow, app} = require('electron');
 let main;
 
@@ -58,4 +58,9 @@ app.on('web-contents-created', (event, contents) => {
 ep.on('logger', (request) => {
     let arg = request.argument;
     request.response({ level: arg.level, message: arg.message, date:new Date() });
+});
+
+ep.on('test', (request) => {
+    let arg = request.argument;
+    console.log(arg);
 });
