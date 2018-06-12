@@ -31,3 +31,4 @@ class ElectronPlus {
 const ep = new ElectronPlus;
 
 module.exports = ep;
+module.exports = app;
