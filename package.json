@@ -1,10 +1,11 @@
 {
   "name": "electron-plus",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "A new electron helper for rapid and big development",
   "main": "main.js",
   "dependencies": {
     "electron": "^2.0.2",
+    "electron-settings": "^3.2.0",
     "eslint": "^4.19.1"
   },
   "devDependencies": {
